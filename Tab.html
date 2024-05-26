@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab-Project</title>
+    <style>
+        h1, #para {
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        h3 {
+            letter-spacing: 1.5px;
+            margin-left: 19px;
+            margin-top: 11px;
+        }
+        p {
+            letter-spacing: 0.5px;
+            margin: 5px 20px 0px 20px;
+            color: rgba(10, 96, 136, 0.981);
+        }
+        #para {
+            color: rgba(10, 96, 136, 0.981);
+        }
+        img {
+            height: 310px;
+            border-radius: 20px;
+            margin-top: 50px;
+            margin-left: 70px;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+        }
+        .inner {
+            height: 310px;
+            width: 460px;
+            margin-top: 48px;
+            margin-left: 40px;
+            border-radius: 20px;
+            box-shadow: 10px 5px 30px 0.4px black;
+        }
+        button {
+            font-size: 17px;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            margin: 0px;
+            padding: 17px 47px 17px 42px;
+            margin-top: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: white;
+        }
+        .btn {
+            margin-left: 4px;
+        }
+        .art2, .art3 {
+            display: none; 
+        }
+        .active {
+            background-color: white; 
+        }
+        .inactive {
+            background-color: gray; 
+        }
+    </style>
+</head>
+<body>
+    <h1>About</h1>
+    <p id="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, aperiam!</p>
+    <div class="box">
+        <img src="tabs.jpg" alt="mountain">
+        <div class="box2">
+            <div class="inner">
+                <div class="btn">
+                    <button class="active" id="History">History</button>
+                    <button class="inactive" id="Vision">Vision</button>
+                    <button class="inactive" id="Goals">Goals</button>
+                </div>
+                <article>
+                    <div class="art1">
+                        <h3>History</h3>
+                        <p>I'm baby wolf pickled schlitz try-hard normcore marfa man bun mumblecore vice pop-up XOXO lomo kombucha glossier bicycle rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard tilde try-hard, woke fixie banjo man bun. Small batch tumeric mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral direct trade hoodie ugh chambray, craft beer pork belly flannel tacos single-origin coffee art party migas plaid pop-up.</p>
+                    </div>
+                    <div class="art2">
+                        <h3>Vision</h3>
+                        <p>Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth crucifix offal deep v hella biodiesel. Church-key listicle polaroid put a bird on it chillwave palo santo enamel pin, tattooed meggings franzen la croix cray. Retro yr aesthetic four loko tbh helvetica air plant, neutra palo santo tofu mumblecore. Hoodie bushwick pour-over jean shorts chartreuse shabby chic. Roof party hammock master cleanse pop-up truffaut, bicycle rights skateboard affogato readymade sustainable deep v live-edge schlitz narwhal.
+
+                            list item
+                            list item
+                            list item</p>
+                    </div>
+                    <div class="art3">
+                        <h3>Goals</h3>
+                        <p>Chambray authentic truffaut, kickstarter brunch taxidermy vape heirloom four dollar toast raclette shoreditch church-key. Poutine etsy tote bag, cred fingerstache leggings cornhole everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk swag, mixtape hashtag marfa readymade direct trade man braid cold-pressed roof party. Small batch adaptogen coloring book heirloom. Letterpress food truck hammock literally hell of wolf beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie, banh mi salvia venmo photo booth quinoa chicharrones.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <script>
+        const Hist = document.getElementById("History");
+        const Visi = document.getElementById("Vision");
+        const Goa = document.getElementById("Goals");
+
+        const art1 = document.querySelector(".art1");
+        const art2 = document.querySelector(".art2");
+        const art3 = document.querySelector(".art3");
+
+        Hist.addEventListener("click", () => {
+            art1.style.display = "block";
+            art2.style.display = "none";
+            art3.style.display = "none";
+            Hist.classList.add('active');
+            Hist.classList.remove('inactive');
+            Visi.classList.add('inactive');
+            Visi.classList.remove('active');
+            Goa.classList.add('inactive');
+            Goa.classList.remove('active');
+        });
+
+        Visi.addEventListener("click", () => {
+            art1.style.display = "none";
+            art2.style.display = "block";
+            art3.style.display = "none";
+            Hist.classList.add('inactive');
+            Hist.classList.remove('active');
+            Visi.classList.add('active');
+            Visi.classList.remove('inactive');
+            Goa.classList.add('inactive');
+            Goa.classList.remove('active');
+        });
+
+        Goa.addEventListener("click", () => {
+            art1.style.display = "none";
+            art2.style.display = "none";
+            art3.style.display = "block";
+            Hist.classList.add('inactive');
+            Hist.classList.remove('active');
+            Visi.classList.add('inactive');
+            Visi.classList.remove('active');
+            Goa.classList.add('active');
+            Goa.classList.remove('inactive');
+        });
+    </script>
+</body>
+</html>

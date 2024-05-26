@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        main {
+            width: 75%;
+            height: 500px;
+            margin: auto;
+            margin-top: 80px;
+            box-shadow: 0px 0px 3px grey;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 6px rgba(18, 103, 249, 0.848) solid;
+        }
+        .slide {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transition: transform 1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .slide img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        h1 {
+            position: absolute;
+            font-size: 80px;
+            color:white;
+            text-align: center;
+        }
+        .last-slide-content img{
+            height: 60%;
+            width: 100%;
+            border-radius: 50%;
+            position: relative;
+        }
+        .blue-bg {
+            background-color: rgba(16, 157, 239, 0.678);
+            color: white;
+        }
+        .last-slide {
+            background-color: rgba(16, 157, 239, 0.678);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .last-slide-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .nav button {
+            font-size: 25px;
+            padding: 10px;
+            border: none;
+            letter-spacing: 1.5px;
+            color: rgb(4, 70, 70);
+            background-color: white;
+            cursor: pointer;
+        }
+        #prev {
+            visibility: hidden;
+        }
+        .name{
+            font-size: 40px;
+            letter-spacing: 5px;
+        }
+        #numer{
+            margin-top: 380px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="slide" style="left: 0%;">
+            <img src="sea.jpg" class="img" alt="sea">
+            <h1>1</h1>
+        </div>
+        <div class="slide blue-bg" style="left: 100%;">
+            <h1>2</h1>
+        </div>
+        <div class="slide" style="left: 200%;">
+            <img src="pineapple.jpg" class="img" alt="pineapple">
+            <h1>3</h1>
+        </div>
+        <div class="slide blue-bg last-slide" style="left: 300%;">
+            <div class="last-slide-content">
+                <img src="susanDoe.jpg" class="people" alt="Susan Doe">
+                <h2 class="name">Susan Doe</h2>
+                <h1 id="numer">4</h1>
+            </div>
+        </div>
+    </main>
+    <div class="nav">
+        <button onclick="goPrev()" id="prev">Prev</button>
+        <button onclick="goNext()" id="next">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        let counter = 0;
+
+        const goPrev = () => {
+            if (counter > 0) {
+                counter--;
+                slideImage();
+            }
+            updateButtons();
+        }
+
+        const goNext = () => {
+            if (counter < slides.length - 1) {
+                counter++;
+                slideImage();
+            }
+            updateButtons();
+        }
+
+        const slideImage = () => {
+            slides.forEach(
+                (slide) => {
+                    slide.style.transform = `translateX(-${counter * 100}%)`;
+                }
+            );
+        }
+
+        const updateButtons = () => {
+            const prevButton = document.getElementById("prev");
+            const nextButton = document.getElementById("next");
+
+            prevButton.style.visibility = (counter === 0) ? "hidden" : "visible";
+            nextButton.style.visibility = (counter === slides.length - 1) ? "hidden" : "visible";
+        }
+
+        updateButtons();
+    </script>
+</body>
+</html>

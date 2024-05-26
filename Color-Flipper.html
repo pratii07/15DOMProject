@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Flipper</title>
+    <style>
+        header {
+            display: flex;
+            background-color: rgb(243, 240, 240);
+            justify-content:space-around;
+            padding: 10px 50px; 
+        }
+        h2{
+            cursor: pointer;
+        }
+        h2:hover{
+            color: rgb(97, 97, 219);
+        }
+        #box {
+            height: 530px;
+            width: auto;
+            transition: 0.5s;
+            box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #bgc {
+            height: 65px;
+            width: 390px;
+            background-color: black;
+            border-radius: 5px;
+            border: 1px solid black;
+            margin-bottom: 20px; 
+        }
+        h3{
+            padding-left: 55px;
+            color: aliceblue;
+        }
+        #btn {
+            color: white;
+            background-color: black;
+            border: 1px blue solid;
+            border-radius: 0%20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 style="color: rgb(97, 97, 219);">Color Flipper</h2>
+        <h2>Simple Hex</h2>
+    </header>
+    <div id="box">
+        <!-- <div id="bgc"><h3>Background Color :<span id="output"></span></h3></div> -->
+        <div id="bgc"><h3>Background Color : <span id="output"></span></h3></div>
+        <button id="btn">CLICK ME</button>
+    </div>
+
+    <script>
+        const getColor = () => {
+            const randomNumber = Math.floor(Math.random()*16777215);
+            const randomCode = "#" + randomNumber.toString(16);
+            document.body.style.backgroundColor = randomCode;
+            document.getElementById("output").textContent = randomCode;
+        }
+        document.getElementById("btn").addEventListener("click",getColor);
+        getColor();
+    </script>
+</body>
+</html>

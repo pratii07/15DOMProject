@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body{
+            height: 580px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: gainsboro;
+            border: 3px black double;
+        }
+        h1{
+            font-size: 65px;
+            letter-spacing: 7px;
+            margin-left: 30px;
+        }
+        button{
+            padding: 21px;
+            border-radius:0%20px;
+            margin: 25px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+        #output{
+            
+            font-size: 90px;
+            margin-left: 220px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 style="color:black;">Counter</h1>
+    <div id="btns">
+        <h2><span id="output">0</span></h2>
+        <button id="DEC">DECREASE</button>
+        <button id="RE">RESET</button>
+        <button id="INCRE">INCREASE</button>
+    </div>
+
+    <script>
+        let count = 0;
+        let output = document.getElementById('output');
+        let DEC = document.getElementById('DEC');
+        let RE = document.getElementById('RE'); 
+        let INCRE = document.getElementById('INCRE'); 
+
+        DEC.addEventListener('click',() =>{
+            count --;
+            document.body.style.color = 'red';
+            counterUpdate();
+
+        })
+        RE.addEventListener('click',() =>{
+            count = 0;
+            document.body.style.color = 'black';
+            counterUpdate();
+
+        })
+        INCRE.addEventListener('click',() =>{
+            count ++;
+            document.body.style.color = 'green';
+            counterUpdate();
+
+        })
+
+        function counterUpdate(){
+            output.textContent = count;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        .outer {
+            height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner {
+            height: 200px;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 7px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 39px;
+            letter-spacing: 2px;
+        }
+        #btn {
+            height: 42px;
+            color: rgb(238, 238, 252);
+            background-color: rgba(65, 65, 237, 0.938);
+            border-radius: 0%20px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            border: none;
+        }
+        #btn:hover {
+            background-color: white;
+            color: black;
+            border: 1px black solid;
+        }
+        .modal {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(58, 49, 49, 0.8);
+        }
+        .content {
+            height: 150px;
+            padding: 0px 0;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            position: relative;
+            
+        }
+        .hidden {
+            display: none;
+        }
+        #crossbtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            color: red;
+            border: none;
+            font-size: 25px;
+            font-weight: 30%;
+            cursor: pointer;
+        }
+        #crossbtn:hover{
+            border: rgb(91, 91, 251) 1.5px solid;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="outer">
+        <div class="inner">
+            <h1>Modal Project</h1>
+            <button id="btn">OPEN MODAL</button>
+        </div>
+    </header>
+    <div class="modal" id="modal">
+        <div class="content">
+            <h1>Modal Content</h1>
+            <button id="crossbtn"><i class="fa-solid fa-xmark">X</i></button>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.getElementById("btn");
+        let crossbtn = document.getElementById("crossbtn");
+        let modal = document.getElementById("modal");
+
+        btn.addEventListener("click", () => {
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+        });
+
+        crossbtn.addEventListener("click", () => {
+            modal.classList.add('hidden');
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

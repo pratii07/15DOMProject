@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem-Ipsum</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        h1, .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            letter-spacing: 1.2px;
+        }
+        h1 {
+            margin-top: 70px;
+            letter-spacing: 3px;
+        }
+        .box p {
+            font-size: 30px;
+            letter-spacing: 4px;
+        }
+        input {
+            font-size: 25px;
+            text-align: left;
+        }
+        #count {
+            height: 30px;
+            border-radius: 7px;
+            padding: 5px;
+            width: 70px;
+            border: white;
+        }
+        button {
+            padding: 12px;
+            border-radius: 11px;
+            border: none;
+            width: 140px;
+            background-color: rgba(74, 177, 237, 0.868);
+            letter-spacing: 1.2px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgba(38, 134, 237, 0.61);
+            color: rgb(6, 43, 93);
+        }
+        .para {
+            display: block;
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            letter-spacing: 0.9px;
+            color: rgb(6, 43, 93);
+        }
+        #sampleText {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>TIRED OF BORING LOREM-IPSUM?</h1>
+        <div class="box">
+            <p>Paragraphs:</p>
+            <input type="number" placeholder="5" id="count" min="1" max="9">
+            <button id="generate">GENERATE</button>
+        </div>
+        <article id="lorem-container">
+            <p id="sampleText" class="para">Cat gets stuck in tree firefighters try to get cat down firefighters get stuck in tree cat eats firefighters' slippers kitty power ignore the squirrels, you'll never catch them anyway for what a cat-ass-trophy! or purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table. Pretend you want to go out but then don't bite off human's toes, yet disappear for four days and return home with an expensive injury; bite the vet so catch eat throw up catch eat throw up bad birds.</p>
+        </article>
+    </section>
+    <script>
+        const generate = document.getElementById("generate");
+        const loremContainer = document.getElementById("lorem-container");
+        const sampleText = document.getElementById("sampleText").textContent;
+
+        generate.addEventListener("click", () => {
+            const count = parseInt(document.getElementById("count").value) || 1;
+            loremContainer.innerHTML = ""; 
+
+            for (let i = 0; i < count; i++) {
+                const para = document.createElement("p");
+                para.classList.add("para");
+                para.textContent = sampleText;
+                loremContainer.appendChild(para);
+            }
+        });
+    </script>
+</body>
+</html>

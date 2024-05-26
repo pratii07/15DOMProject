@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video-Project</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .vid-container {
+            min-height: 100vh;
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+        #video-here {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        h1 {
+            color: black;
+            letter-spacing: 1px;
+            margin-right: 180px;
+        }
+        .btn {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            z-index: 1;
+            background-color: white;
+            padding: 9px;
+            border: 2px solid rgb(91, 76, 76);
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100px;
+            height: 40px;
+           
+        }
+        .btncont{
+            position: absolute;
+            left: 50px;
+            z-index: 1;
+        }
+        
+        .switch {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background-color: rgb(169, 169, 251);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .play .switch {
+            left: 0;
+        }
+        .pause .switch {
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="vid-container">
+        <video autoplay muted loop id="video-here">
+            <source src="17768410-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
+        <h1>Video-Project</h1>
+    </div>
+    <div class="btncont"> 
+    <button class="btn play">
+        <span id="play">play</span>
+        <span id="pause">pause</span>
+        <div class="switch"></div>
+    </button></div>
+    <script>
+        const btn = document.querySelector(".btn");
+        const video = document.querySelector("#video-here");
+
+        btn.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                btn.classList.remove('pause');
+                btn.classList.add('play');
+            } else {
+                video.pause();
+                btn.classList.remove('play');
+                btn.classList.add('pause');
+            }
+        });
+    </script>
+</body>
+</html>
