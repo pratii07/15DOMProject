@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our-Menu</title>
+    <style>
+        body{
+            font-family: "Trirong", serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .title h1 {
+            font-size: 31px;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+        .underline {
+            height: 2.7px;
+            width: 100px;
+            background-color: rgb(138, 72, 25);
+            margin: 0 auto 20px;
+        }
+        button{
+            margin-left: 14px;
+            border: 1px rgb(138, 72, 25) solid; 
+            color: rgba(193, 112, 55, 0.759); 
+            border-radius: 4px; 
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgba(159, 83, 28, 0.922);
+            color: white;
+            border: 1px rgb(60, 60, 237) solid;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+            background-color:white;
+            margin: 50px 80px 60px 80px;
+        }
+        img{
+            height: 90px;
+            width: 130px;
+            border: 2px rgba(159, 83, 28, 0.922) solid;
+            border-radius: 5px;
+        }
+        .title-rup{
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            padding: 0px 15px 0px 0px;
+            width: 260px;
+            height: 20px;
+            letter-spacing: 1px;
+        }
+        h6{
+            font-size: 14px;
+            color: rgba(98, 50, 16, 0.922) ;
+        }
+        p{
+            height: 48px;
+            width: 300px;
+            margin: 0px 0px 0px 0px;
+            text-align: left;
+            background-color:white; 
+            padding-top: 0px;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Our Menu</h1>
+            <div class="underline"></div>
+        </div>
+        <div class="btn">
+            <button id="all-btn">All</button>
+            <button id="B-btn">Breakfast</button>
+            <button id="L-btn">Lunch</button>
+            <button id="S-btn">Shakes</button>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item" data-category="breakfast"><img src="Buttermilk-Pancakes.jpg" alt="Buttermilk-Pancakes"></div>
+            <div class="grid-item" data-category="breakfast">
+                <div class="title-rup">
+                    <h4>Buttermilk Pancakes</h4>
+                    <h6>$ 15.99</h6>
+                </div>
+                <hr>
+                <p>I'm baby wike milkshk wolf bitters live-edge blue bottle,hammock freegan copper mug whatever cold-pressed.</p>
+            </div>
+            <div class="grid-item" data-category="lunch"><img src="dinner double.jpg" alt="dinner double"></div>  
+            <div class="grid-item" data-category="lunch">
+                <div class="title-rup">
+                    <h4>Dinner Double</h4>
+                    <h6>$ 13.99</h6>
+                </div>
+                <hr>
+                <p> Lunch - Egg Fried Rice, Green Chicken Curry & Hariyali Chicken Tikka · Indian Style Sub Sandwich Recipe — Spiceindiaonline.</p>
+            </div>
+            <div class="grid-item" data-category="shakes"><img src="godzilla milkshake.jpeg" alt="godzilla milkshake"></div>
+            <div class="grid-item" data-category="shakes">
+                <div class="title-rup">
+                    <h4>Godzilla Milkshake</h4>
+                    <h6>$ 6.99</h6>
+                </div>
+                <hr>
+                <p>Milo blended with banana & mint chocolate chip ice cream, drizzled with melted chocolate.</p>
+            </div>  
+            <div class="grid-item" data-category="breakfast"><img src="omalet.jpg" alt="omalet"></div>  
+            <div class="grid-item" data-category="breakfast">
+                <div class="title-rup">
+                    <h4>Country Delight</h4>
+                    <h6>$ 20.99</h6>
+                </div>
+                <hr>
+                <p> Savor the wholesome goodness of a golden, flaky chicken pot pie, brimming with tender chicken,creamy gravy.</p>
+            </div>  
+            <div class="grid-item" data-category="lunch"><img src="eat attack.jpg" alt="egg attack"></div>  
+            <div class="grid-item" data-category="lunch">
+                <div class="title-rup">
+                    <h4>Egg Atteck</h4>
+                    <h6>$ 22.99</h6>
+                </div>
+                <hr>
+                <p>frazen vegan passbst biscycle right kickstarter pinterest meditation farm-to-table 90's pop-up.</p>
+            </div>  
+            <div class="grid-item" data-category="shakes"><img src="Oreo-Milkshake.jpg" alt="oreo-Milkshake"></div>  
+            <div class="grid-item" data-category="shakes">
+                <div class="title-rup">
+                    <h4>Oreo Dream</h4>
+                    <h6>$ 18.99</h6>
+                </div>
+                <hr>
+                <p>Dive into layers of creamy, velvety cheesecake swirled with chunks of crunchy Oreo cookies, all atop a decadent Oreo crust.</p>
+            </div>  
+            <div class="grid-item" data-category="breakfast"><img src="bacon overflow.jpeg" alt="bacon overflow"></div>  
+            <div class="grid-item" data-category="breakfast">
+                <div class="title-rup">
+                    <h4>Bacon overflow</h4>
+                    <h6>$ 8.99</h6>
+                </div>
+                <hr>
+                <p>Savory bacon blends seamlessly with velvety cheese sauce, creating a mouthwatering, indulgent delight.</p>
+            </div>  
+            <div class="grid-item" data-category="lunch"><img src="American-Pecan-Pie.png" alt="American-Pecan-Pie"></div>  
+            <div class="grid-item" data-category="lunch">
+                <div class="title-rup">
+                    <h4>American Classic</h4>
+                    <h6>$ 12.99</h6>
+                </div>
+                <hr>
+                <p>A tender, juicy blend of seasoned ground beef, topped with a tangy glaze and served with creamy mashed potatoes and green beans.</p>
+            </div>  
+            <div class="grid-item" data-category="shakes"><img src="quarantine.jpeg" alt="quarantine"></div>  
+            <div class="grid-item" data-category="shakes">
+                <div class="title-rup">
+                    <h4>Quarantine Buddy Shakes</h4>
+                    <h6>$ 16.99</h6>
+                </div>
+                <hr>
+                <p>Enjoy the ultimate blend of creamy vanilla ice cream and rich chocolate syrup, creating a delightful treat perfect for sharing with your best friend.</p>
+            </div>  
+        </div>
+    </div>
+    <script src="Menu.js">
+    </script>
+</body>
+</html>
